@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+::-webkit-scrollbar{
+    margin-left: 1px;
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #ddd;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #999;
+}
+
+nav{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+nav .titulo{
+    color: #ddd;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+main{
+    overflow-x: scroll;
+    padding: 15px 15px 15px 0;
+    display: flex;
+    flex-grow: 2;
+    align-items: flex-start;
+}
+
+.lista{
+    background-color: #eee;
+    position: relative;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 1px black;
+}
+
+.sm-btn{
+    position: absolute;
+    top: 10px;
+    border: none;
+    background: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 300ms;
+    visibility: hidden;
+}
+
+.titulo-wrapper{
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+
+.confirmar-lista,
+.eliminar-lista{
+    color: red;
+    top: 30px;
+    right: 30px;
+}
+
+.confirmar-lista{
+    color: green;
+}
+
+.titulo-wrapper:hover .confirmar-lista,
+.titulo-wrapper:hover .eliminar-lista{
+    visibility: visible;
+}
+
+.carta-wrapper{
+    width: 14rem;
+    overflow-y: scroll;
+}
+
+.carta-wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.lista:hover .carta-wrapper::-webkit-scrollbar{
+    display: block;
+}
+
+.carta-wrapper .carta{
+    box-shadow: 0 1px black;
+}
+
+.carta{
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.nueva-carta:hover,
+.carta:hover{
+    background-color: #ddd;
+}
+
+.carta:hover .eliminar,
+.carta:hover .editar{
+    visibility: visible;
+}
+
+.carta .titulo{
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-bottom: 0.5rem;
+}
+
+.dragging{
+    opacity: 0.5;
+}
+
+.editar{
+    right: 10px;
+}
+
+.eliminar{
+    color: red;
+    right: 35px;
+}
+
+.nueva-carta{
+    border: none;
+    background-color: inherit;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.eliminar-lista:hover,
+.eliminar:hover,
+.editar:hover{
+    background-color: #b7b7b7;
+}
+
+.nueva-carta input[type='text']{
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 15px;
+    border: none;
+    box-shadow: 1px 1px black;
+}
+
+.nueva-carta input[type='text']:focus{
+    outline: none;
+}
+
+.btn-wrapper{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nueva-carta button,
+#agregar-carta{
+    padding: 0.5rem;
+}
+
+.creando-lista,
+.creando-carta{
+    padding: 0;
+}
+
+.creando-lista:hover,
+.creando-carta:hover{
+    background-color: inherit;
+    cursor: inherit;
+}
+
+#crear-lista,
+#agregar-carta{
+    cursor: pointer;
+    background-color: rgba(65, 250, 28,0.5);
+    font-weight: bold;
+    border: none;
+    box-shadow: 1px 1px black;
+}
+
+#crear-lista:hover,
+#agregar-carta:hover{
+    background-color: rgba(65, 250, 28,0.8);
+}
+
+#cancelar{
+    margin-left: 10px;
+    border: none;
+    background-color: inherit;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    cursor: pointer;
+    color: red;
+}
+
+#nueva-lista{
+    padding: 1rem;
+    cursor: pointer;
+    border: none;
+    position: relative;
+}
+
+#nueva-lista.creando-lista{
+    cursor: default;
+}
+
+input.empty{
+    position: relative;
+    border: 1px solid red !important;
+}
+
+input + p{
+    display: none;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input.empty + p{
+    display: block;
+    position: relative;
+    top: -5px;
+}
+
+.carta #nuevo-descripcion{
+    margin: 10px auto;
+}
+
+#guardar-carta{
+    padding: 5px;
+    border: none;
+    background-color: rgba(65, 250, 28,0.8);
+    box-shadow: 1px 1px black;
+}
+
+.carta .empty + p{
+    margin-top: 10px;
+}

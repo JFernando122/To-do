@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>to-do list</title>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <template id="plantilla-lista">
+        <div class="lista">
+            <div class="titulo-wrapper">
+                <div class="lista-titulo" tabindex="0"></div>
+                <button class="sm-btn eliminar-lista far fa-trash-alt" tabindex="0"></button>
+            </div>
+            <div class="carta-wrapper"></div>
+            <button class="nueva-carta" tabindex="0">
+                <i class="fa fa-plus"></i>
+                Nueva Carta
+            </button>
+        </div>
+    </template>
+    <template id="plantilla-carta">
+        <div class="carta" draggable="true">
+            <div class="titulo"></div>
+            <div class="descripcion"></div>
+            <button class="sm-btn editar fa fa-edit" tabindex="0"></button>
+            <button class="sm-btn eliminar far fa-trash-alt" tabindex="0"></button>
+        </div>
+    </template>
+    <template id="plantilla-creacion-carta">
+            <input type="text" name="titulo" id="nuevo-titulo" placeholder="Introduzca el titulo" tabindex="0">
+            <p>Favor de introducir un titulo</p>
+            <input type="text" name="descripcion" id="nuevo-descripcion" placeholder="Descripcion de la carta" tabindex="0">
+            <p>Favor de introducir una descripcion</p>
+            <div class="btn-wrapper">
+                <input type="submit" id="agregar-carta" tabindex="0" value="Agregar carta">
+                <button id="cancelar" tabindex="0">X</button>
+            </div>
+    </template>
+    <template id="plantilla-creacion-lista">
+        <input type="text" name="titulo" id="nuevo-titulo-lista" placeholder="Introduzca el nombre de la lista" tabindex="0">
+        <p>Favor de introducir un titulo</p>
+        <div class="btn-wrapper">
+            <button id="crear-lista" tabindex="0">Crear lista</button>
+            <button id="cancelar" tabindex="0">X</button>
+        </div>
+    </template>
+    <template id="plantilla-edicion-carta">
+        <input type="text" name="nuevo-titulo" id="nuevo-titulo">
+        <p>EL titulo no puede estar vacio</p>
+        <input type="text" name="nuevo-descripcion" id="nuevo-descripcion">
+        <p>La descripcion no puede estar vacia</p>
+        <button id="guardar-carta">Guardar</button>
+    </template>
+    <nav>
+        <h1 class="titulo">To-do list</h1>
+    </nav>
+    <main>
+        <div class="lista" id="creacion-lista">
+            <div class="carta-wrapper"></div>
+            <button class="nueva-carta" id="nueva-lista" tabindex="0">
+                <i class="fa fa-plus"></i>
+                Nueva Lista
+            </button>
+        </div>
+    </main>
+</body>
+</html>
